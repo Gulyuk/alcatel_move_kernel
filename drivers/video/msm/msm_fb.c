@@ -866,9 +866,9 @@ static __u32 msm_fb_line_length(__u32 fb_index, __u32 xres, int bpp)
 	   is writing directly to fb0, the framebuffer pitch
 	   also needs to be 32 pixel aligned */
 
-	//if (fb_index == 0)
-	//	return ALIGN(xres, 32) * bpp;
-	//else
+	if (fb_index == 0)
+		return ALIGN(xres, 32) * bpp;
+	else
 		return xres * bpp;
 }
 
